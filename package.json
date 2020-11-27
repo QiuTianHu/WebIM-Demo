@@ -1,0 +1,23 @@
+{
+  "name": "koa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "koa": "^2.13.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/QiuTianHu/WebIM-Demo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/QiuTianHu/WebIM-Demo/issues"
+  },
+  "homepage": "https://github.com/QiuTianHu/WebIM-Demo#readme"
+}
