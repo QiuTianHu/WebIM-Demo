@@ -1,10 +1,101 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-  <head>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    
-    <title>web im</title>
-  </head>
-  <body>
-  </body>
+
+<head>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue-router/dist/vue-router.js"></script>
+
+  <title>首页</title>
+
+
+</head>
+
+<body>
+
+  <div id='app'>
+    <!-- 登录 -->
+    <div>
+      <button id="login">
+        {{ isLogin }}
+      </button>
+      <br><br>
+      <div id="loginForm" v-if="loginFormSeen">
+        <input type="text" v-model="username" placeholder="账号">
+        <br>
+        <input type="text" v-model="password" placeholder="密码">
+        <br>
+        <button id="login" @click="loginSubmit">登录</button>
+      </div>
+    </div>
+
+
+    <!-- 好友列表 -->
+    <div v-if='friendsSeen'>
+      <button id="getFriends" @click="getFriends"> 获取好友 </button>
+      <ul>
+        <li v-for="friend in friends" > {{ friend.name }} </li>
+      </ul>
+    </div>
+
+    <!-- 聊天窗口 -->
+  </div>
+
+
+
+  <script type="text/javascript">
+    var vm = new Vue({
+      el: "#app",
+      data: {
+        username: '',
+        password: '',
+        isLogin: '未登录',
+        loginFormSeen: true,
+        friends: [
+          {name: '小磊'}, 
+          {name: '小虎'},
+          {name: '小恒'}
+        ],
+        friednsSeen: false
+      },
+      // 打开界面时就检查是否登录
+      created: function() {
+        this.checkLogin();
+      },
+      methods: {
+        checkLogin: function() {
+          console.log('检查是否登录');
+          /* 
+          检查是否登录
+          */
+          return true;
+        },
+        loginSubmit: function() {
+          console.log('登录 ' + this.username + ' ' + this.password);
+          /* 
+          请求后端接口进行登录信息提交
+          */
+          if(this.checkLogin()) {
+            this.loginFormSeen = false;
+            this.isLogin = '已登录';
+
+            this.friendsSeen = true;
+          } else {
+            // 登录失败
+          }
+        },
+        getFriends: function() {
+          console.log('获取好友');
+          /* 
+          请求后端接口获取好友
+          */
+
+        }
+      }
+    });
+
+
+  </script>
+</body>
+
 </html>
