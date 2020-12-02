@@ -94,7 +94,7 @@
         submitLogin: function () {
           console.log('登录 ' + this.username + ' ' + this.password);
           /* 
-          请求后端接口进行登录信息提交
+          1. 请求后端接口进行登录信息提交
           */
           if (this.checkLogin()) {
             this.loginFormSeen = false;
@@ -108,7 +108,7 @@
         getFriends: function () {
           console.log('获取好友');
           /* 
-          请求后端接口获取好友
+          2. 请求后端接口获取好友
           */
           this.friends = [
             {
@@ -136,7 +136,7 @@
           console.log(message);
           
           /*
-          请求后端接口给好友发送消息
+          3. 请求后端接口给好友发送消息
           */
           // 如果发送成功
           sendSuccessed = true;
