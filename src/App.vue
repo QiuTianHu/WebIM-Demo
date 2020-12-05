@@ -24,20 +24,6 @@ export default {
   data: function () {
     return {
       LoginBoxSeen: true,
-      friends: [
-          {
-            name: "小磊",
-            id: 1,
-          },
-          {
-            name: "小虎",
-            id: 2,
-          },
-          {
-            name: "小恒",
-            id: 3,
-          }
-      ],
     };
   },
 };
