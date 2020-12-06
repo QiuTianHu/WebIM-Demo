@@ -1,102 +1,67 @@
 <template>
-  <v-app>
-    <v-app-bar app color="primary" dark>
-      <v-btn text> 联系人 </v-btn>
-      <v-btn text> 会话 </v-btn>
+  <div>
+    <span class="bg"></span>
+    <v-app>
+      <!-- 导航栏 -->
+      <TheNavigation />
+      
+      <v-main>
+        <v-container>
+          <v-row>
+            <v-col>
+              <TheChatBox />
+            </v-col>
 
-      <v-spacer></v-spacer>
+            <v-spacer></v-spacer>
 
-      <v-avatar size="36">
-        <img src="@/assets/avatar1.jpeg" alt="avatar1" />
-      </v-avatar>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        登录
-      </v-btn>
-    </v-app-bar>
-
-    <v-main>
-      <v-container>
-        <v-row>
-          <v-col>
-            <!-- v-card 里是联系人卡片 -->
-            <v-card>
-              <v-list subheader>
-                <v-subheader>联系人</v-subheader>
-                <!-- <v-list-item> 里是单个联系人 -->
-                <v-list-item>
-                  <v-list-item-avatar size="36px">
-                    <img src="@/assets/avatar1.jpeg" alt="avatar1" />
-                  </v-list-item-avatar>
-                  <v-list-item-content>尼古拉斯·磊</v-list-item-content>
-                </v-list-item>
-                <v-list-item>
-                  <v-list-item-avatar size="36px">
-                    <img src="@/assets/avatar2.jpeg" alt="avatar1" />
-                  </v-list-item-avatar>
-                  <v-list-item-content>莱昂纳多·虎</v-list-item-content>
-                </v-list-item>
-                <v-list-item>
-                  <v-list-item-avatar size="36px">
-                    <img src="@/assets/avatar3.jpeg" alt="avatar1" />
-                  </v-list-item-avatar>
-                  <v-list-item-content>克里斯蒂安·恒</v-list-item-content>
-                </v-list-item>
-              </v-list>
-            </v-card>
-          </v-col>
-          <v-spacer></v-spacer>
-
-          <!-- v-card 里是对话框卡片 -->
-          <v-col>
-            <v-card>
-              <v-list subheader>
-                <v-subheader>尼古拉斯·磊</v-subheader>
-                <!-- <v-list-item> 里是单个信息 -->
-                <v-list-item>
-                  <v-list-item-avatar size="36px">
-                    <img src="@/assets/avatar1.jpeg" alt="avatar1" />
-                  </v-list-item-avatar>
-                  <v-list-item-content>你好</v-list-item-content>
-                </v-list-item>
-                <v-list-item>
-                  <v-list-item-avatar size="36px">
-                    <img src="@/assets/avatar1.jpeg" alt="avatar1" />
-                  </v-list-item-avatar>
-                  <v-list-item-content>在么</v-list-item-content>
-                </v-list-item>
-                <v-list-item>
-                  <v-list-item-content class="text-right align-self-start">
-                    <v-list-item-title> 你是谁？ </v-list-item-title>
-                  </v-list-item-content>
-                </v-list-item>
-                <v-list-item>
-                  <v-list-item-avatar size="36px">
-                    <img src="@/assets/avatar1.jpeg" alt="avatar1" />
-                  </v-list-item-avatar>
-                  <v-list-item-content>我是尼古拉斯·磊</v-list-item-content>
-                </v-list-item>
-              </v-list>
-            </v-card>
-          </v-col>
-        </v-row>
-      </v-container>
-    </v-main>
-  </v-app>
+            <v-col>
+              <TheFriendsBox />
+            </v-col>
+          </v-row>
+        </v-container>
+      </v-main>
+    </v-app>
+  </div>
 </template>
 
 <script>
+//import store from "@/store.js";
+import TheNavigation from "@/components/TheNavigation.vue";
+import TheChatBox from "@/components/TheChatBox.vue";
+import TheFriendsBox from "@/components/TheFriendsBox.vue";
+
 export default {
   name: "App",
-
-  components: {},
+  components: {
+    TheNavigation,
+    TheChatBox,
+    TheFriendsBox
+  },
 
   data: () => ({
     //
   }),
 };
 </script>
+
+<style scoped>
+.bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("https://www.gstatic.com/chat/hangouts/bg/e4c50a95c0148bb14931a73c2ae80d35-AnushElangovan-01.jpg")
+      no-repeat center center;
+  /* https://www.bing.com/th?id=OHR.PLNP_ZH-CN8120863549_1920x1080.jpg */
+  /* https://www.gstatic.com/chat/hangouts/bg/e4c50a95c0148bb14931a73c2ae80d35-AnushElangovan-01.jpg */
+  /* http://h2.ioliu.cn/bing/PorcupineBay_ZH-CN2252758146_1920x1080.jpg */
+  /* http://h2.ioliu.cn/bing/EDCScotland_ZH-CN2038527689_1920x1080.jpg */
+  /* http://h2.ioliu.cn/bing/ChipmunkJP_ZH-CN1697070440_1920x1080.jpg */
+  /* http://h2.ioliu.cn/bing/NaturesWindowLookout_ZH-CN1799883608_1920x1080.jpg */
+  /* http://h2.ioliu.cn/bing/InukshukLights_ZH-CN0756858983_1920x1080.jpg */
+  background-size: cover;
+  transform: scale(1.1);
+}
+</style>

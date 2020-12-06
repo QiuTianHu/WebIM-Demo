@@ -1,3 +1,33 @@
 <template>
-    
+  <v-app-bar app color="transparent" dark>
+    <v-img src="@/assets/logo.png" max-height="36px" max-width="36px"></v-img>
+    <v-btn text> 联系人 </v-btn>
+    <!-- <v-btn text> 会话 </v-btn> -->
+
+    <v-spacer></v-spacer>
+
+    <v-avatar size="36">
+      <v-img src="@/assets/avatar0.jpeg" alt="userAvatar"> </v-img>
+    </v-avatar>
+
+    <v-btn
+      href=""
+      target="_blank"
+      text
+    >
+      登录
+    </v-btn>
+  </v-app-bar>
 </template>
+
+<script>
+import store from "@/store.js";
+
+export default {
+    data() {
+        return {
+            user: store.user
+        }
+    }
+}
+</script>
