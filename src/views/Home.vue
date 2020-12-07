@@ -10,7 +10,7 @@
     </v-col>
     <v-col>
       <TheChatBox />
-      <router-view :key="$route.path" name="chatbox"/>
+      <router-view :key="$route.path"/>
     </v-col>
   </v-row>
 </template>

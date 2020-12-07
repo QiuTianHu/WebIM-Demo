@@ -15,7 +15,7 @@
       target="_blank"
       text
     >
-      登录
+      注销
     </v-btn>
   </v-app-bar>
 </template>
