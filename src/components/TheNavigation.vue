@@ -7,7 +7,7 @@
     <v-spacer></v-spacer>
 
     <v-avatar size="36">
-      <v-img src="@/assets/avatar0.jpeg" alt="userAvatar"> </v-img>
+      <v-img :src="require('@/assets/' + user.userAvatar)" alt="userAvatar"> </v-img>
     </v-avatar>
 
     <v-btn
@@ -26,7 +26,7 @@ import store from "@/store.js";
 export default {
     data() {
         return {
-            user: store.user
+            user: store.user,
         }
     }
 }

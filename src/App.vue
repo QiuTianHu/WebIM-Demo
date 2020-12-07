@@ -9,13 +9,14 @@
         <v-container>
           <v-row>
             <v-col>
-              <TheChatBox />
+              <TheFriendsBox />
             </v-col>
 
             <v-spacer></v-spacer>
 
             <v-col>
-              <TheFriendsBox />
+              <TheChatBox />
+              <router-view :key="$route.path" />
             </v-col>
           </v-row>
         </v-container>
