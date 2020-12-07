@@ -7,18 +7,9 @@
       
       <v-main>
         <v-container>
-          <v-row>
-            <v-col>
-              <TheFriendsBox />
-            </v-col>
-
-            <v-spacer></v-spacer>
-
-            <v-col>
-              <TheChatBox />
-              <router-view :key="$route.path" />
-            </v-col>
-          </v-row>
+          
+          <!-- <Login /> -->
+          <router-view :key="$route.path" name="main"/>
         </v-container>
       </v-main>
     </v-app>
@@ -28,15 +19,12 @@
 <script>
 //import store from "@/store.js";
 import TheNavigation from "@/components/TheNavigation.vue";
-import TheChatBox from "@/components/TheChatBox.vue";
-import TheFriendsBox from "@/components/TheFriendsBox.vue";
-
+// import Login from "@/views/Login.vue";
 export default {
   name: "App",
   components: {
     TheNavigation,
-    TheChatBox,
-    TheFriendsBox
+    // Login
   },
 
   data: () => ({

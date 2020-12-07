@@ -1,15 +1,29 @@
 <template>
-  <div class="home">
-    <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
-  </div>
+  <v-row>
+    <v-col>
+      <TheFriendsBox />
+    </v-col>
+
+    <v-spacer></v-spacer>
+    <v-col>
+      <TheLoginBox />
+    </v-col>
+    <v-col>
+      <TheChatBox />
+      <router-view :key="$route.path" name="chatbox"/>
+    </v-col>
+  </v-row>
 </template>
 
 <script>
-// @ is an alias to /src
+import TheFriendsBox from "@/components/TheFriendsBox.vue"
+import TheChatBox from "@/components/TheChatBox.vue"
 
 export default {
-  name: 'Home',
+  name: "Home",
   components: {
-  }
-}
+    TheChatBox,
+    TheFriendsBox
+  },
+};
 </script>

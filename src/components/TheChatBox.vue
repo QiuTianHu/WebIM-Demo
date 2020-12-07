@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- v-card 里是对话框卡片 -->
-    <v-card>
+    <v-card min-width="450px">
       <!-- v-list 里是对话 -->
       <v-list subheader dense>
         <v-subheader> {{ friend.username }} </v-subheader>

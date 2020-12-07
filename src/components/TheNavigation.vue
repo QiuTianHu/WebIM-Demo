@@ -11,7 +11,7 @@
     </v-avatar>
 
     <v-btn
-      href=""
+      to="/login"
       target="_blank"
       text
     >
